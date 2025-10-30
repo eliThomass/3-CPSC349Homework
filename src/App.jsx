@@ -7,6 +7,8 @@ function App() {
   const [totalPages, setTotalPages] = useState(1);
   const [currentFilter, setCurrentFilter] = useState('');
 
+  console.log('hi');
+
   const [movies, setMovies] = useState([]);
 
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
