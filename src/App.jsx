@@ -7,12 +7,11 @@ function App() {
   const [totalPages, setTotalPages] = useState(1);
   const [currentFilter, setCurrentFilter] = useState('');
 
-  console.log('hi');
-
   const [movies, setMovies] = useState([]);
 
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
   console.log(API_KEY)
+  console.log('hi')
   const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
   const PLACEHOLDER_IMAGE_URL = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg';
 
