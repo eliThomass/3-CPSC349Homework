@@ -10,7 +10,7 @@ function App() {
   const [movies, setMovies] = useState([]);
 
   // In App.jsx, find the API key definition:
-  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+  const API_KEY = '1e7e4f1004d26f1460ced077e80d1b4d';
   const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
   const PLACEHOLDER_IMAGE_URL = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg';
 
