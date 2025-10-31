@@ -9,11 +9,12 @@ function App() {
 
   const [movies, setMovies] = useState([]);
 
-  // In App.jsx, find the API key definition:
+  // API Key for TMDB
   const API_KEY = '1e7e4f1004d26f1460ced077e80d1b4d';
   const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
   const PLACEHOLDER_IMAGE_URL = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg';
 
+  // Get's filter query based on value using hashmap
   const getSortQuery = (filterValue) => {
     const filterMap = {
       'Release Date (Asc)': 'primary_release_date.asc',
@@ -24,6 +25,7 @@ function App() {
     return filterMap[filterValue]; 
   };
 
+  // When new search input detected, update value
   const handleSearch = (event) => {
     const newSearchTerm = event.target.value;
     setCurrentSearch(newSearchTerm);
@@ -31,6 +33,7 @@ function App() {
     setCurrentFilter('');
   }
 
+  // Update filter on event
   const handleFilter = (event) => {
     const newFilterValue = event.target.value;
     setCurrentFilter(newFilterValue);
@@ -50,6 +53,7 @@ function App() {
     }
   }
 
+  // Function to fetch API and display movies based on filter / search
   const fetchAndDisplayMovies = async () => {
     let url = "";
     if(currentSearch) {
@@ -80,6 +84,7 @@ function App() {
     }
   };
 
+  // Movies fetched when these dependencies change
   useEffect(() => {
     fetchAndDisplayMovies();
   }, [currentPage, currentSearch, currentFilter]);
